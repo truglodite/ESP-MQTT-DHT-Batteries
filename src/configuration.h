@@ -7,7 +7,7 @@
 // General configuration for EspMqttDHTbatt.
 ////////////////////////////////////////////////////////////////////////////////
 //#define debug          // Uncomment to enable serial debug output
-//#define testBoard
+//#define testBoard      // This is useful for calibrating Vbatt over a serial connection
 #ifdef testBoard
   #define testBoardVbatt  4.0015  // for proper testing, use extra of precision
   #define testBoardT      74.267
