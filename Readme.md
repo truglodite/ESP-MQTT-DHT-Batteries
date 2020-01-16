@@ -7,6 +7,7 @@ Deepsleeps, wakes every "sleepMicros" (every ~10min default), and sends "temp" (
 
 ## MQTT Pubs & Subs
 *Note: All topics (both pubs and subs) use the format "client_id/topic". Device name is hardcoded in the configuration file.*
+
 S/P | Topic | Data
 --- | ------ | ---------------
 Sub | "ota" | Firmware Upload [0 = normal, 1 = upload]
