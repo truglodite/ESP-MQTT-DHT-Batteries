@@ -9,7 +9,7 @@
 // User configs are in configuration.h.
 // Comment out the line below, or rename your configuration.h to privacy.h.
 /////////////////////////////////////////////////////////////////////////////
-#define privacy
+//#define privacy
 
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
