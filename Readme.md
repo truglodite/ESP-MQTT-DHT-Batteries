@@ -1,4 +1,4 @@
-# BlynkDHTbatts
+# ESP-MQTT-DHT-Batteries
 for: ESP8266 + DHTXX + deepsleep + battery monitor + OTA + MQTT
 by: Truglodite
 
@@ -36,7 +36,7 @@ openssl req -x509 -nodes -newkey rsa:2048 -keyout serverKey.pem -sha256 -out ser
 ```
 
 ## OTA Firmware Updates
-If a "1" is received on the "ota" topic while awake, and battery is not low, when the esp next awakens it will publish "https://deviceipaddress/firmware" to the "ota" topic, and stay in browser upgrade mode. Do not send an ota off to the device while upgrading. If no upgrades are initiated before "otaTimeout", it will reboot and resume normal mode. Be sure to publish the ota message to your broker with the retain flag set to true so this code always has a valid ota state when running. This code will attempt to download the ota subscription for subTimeout before cancelling the ota routine.
+This code makes use of an SSL secured webserver for OTA updates, which is controlled via MQTT messages. If a "1" is received on the "ota" topic while awake, and battery is not low, when the esp next awakens it will publish "https://deviceipaddress/firmware" to the "ota" topic, and stay in browser upgrade mode. Do not send an ota off to the device while upgrading. If no upgrades are initiated before "otaTimeout", it will reboot and resume normal mode. Be sure to publish the ota message to your broker with the retain flag set to true so this code always has a valid ota state when running. This code will attempt to download the ota subscription for subTimeout before cancelling the ota routine.
 
 ## Notes on Battery Life
 Power to the DHT sensor is controlled by io5. The DHT is turned off while asleep to save battery. Note that the DHT is an appreciable capacitive load, so low quiescent LDO's may have trouble with voltage spike resets. A somewhat large bypass cap may be required for stability; note that some candidate capacitors (ie: electrolytic) have very large leakage current, which can drastically reduce battery life.
